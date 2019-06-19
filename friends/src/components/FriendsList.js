@@ -12,6 +12,7 @@ export class FriendsList extends React.Component {
     }
 }
 
+
 const mapStateToProps = state => {
     
 }
