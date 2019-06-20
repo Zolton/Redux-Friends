@@ -5,11 +5,10 @@ import { getFriends, addFriend } from "../action/action";
 
 export class FriendsList extends React.Component {
   state = {
-    friend: {
-      name: "",
-      age: "",
-      email: ""
-    }
+    name: "",
+    age: "",
+    email: "",
+    id: Math.random()
   };
 
   componentDidMount() {
@@ -35,20 +34,34 @@ export class FriendsList extends React.Component {
             <h4>Email: {friend.email}</h4>
           </>
         ))}
-        <input
-          type="text"
-          placeholder="Enter New Friend"
-          value={this.state.friend.name}
-          name="friend"
-          onChange={this.changeHandler}
-        />
-        <button
-          onClick={() => {
-            this.props.addFriend(this.state.friend);
+        <form
+          onSubmit={() => {
+            this.props.addFriend({ ...this.state });
           }}
         >
-          Submit
-        </button>
+          <input
+            type="text"
+            placeholder="Enter New Friend"
+            value={this.state.name}
+            name="name"
+            onChange={this.changeHandler}
+          />
+          <input
+            type="text"
+            placeholder="Enter Age"
+            value={this.state.age}
+            name="age"
+            onChange={this.changeHandler}
+          />
+          <input
+            type="text"
+            placeholder="Enter email"
+            value={this.state.email}
+            name="email"
+            onChange={this.changeHandler}
+          />
+          <button type="submit">Submit</button>
+        </form>
       </>
     );
   }

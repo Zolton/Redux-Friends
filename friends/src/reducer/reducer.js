@@ -48,14 +48,9 @@ export const reducer = (state = initialState, action) => {
         friends: action.payload
       };
     case ADD_NEW_FRIEND:
-      const newFriend = {
-        name: action.payload,
-        age: Math.random(2) * 100,
-        email: "gabbehuio"
-      };
       return {
         ...state,
-        friends: [...state.friends, newFriend]
+        friends: [...state.friends, action.payload]
       };
     default:
       return state;
