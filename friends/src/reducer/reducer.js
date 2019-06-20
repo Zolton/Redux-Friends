@@ -11,8 +11,7 @@ const initialState = {
   friends: [],
   loggingIn: false,
   isFetching: false,
-  error: "",
-  
+  error: ""
 };
 
 export const reducer = (state = initialState, action) => {
@@ -20,14 +19,14 @@ export const reducer = (state = initialState, action) => {
     case LOGIN_START:
       return {
         ...state,
-        error: '',
+        error: "",
         loggingIn: true
       };
-      case LOGIN_SUCCESS:
+    case LOGIN_SUCCESS:
       return {
         ...state,
         loggingIn: false,
-        error: ''
+        error: ""
       };
     case FRIENDS_FETCH:
       return {
@@ -51,7 +50,7 @@ export const reducer = (state = initialState, action) => {
     case ADD_NEW_FRIEND:
       const newFriend = {
         name: action.payload,
-        age: (Math.random(2) * 100),
+        age: (Math.random(2) * 1000),
         email: "gabbehuio"
       };
       return {
@@ -62,6 +61,3 @@ export const reducer = (state = initialState, action) => {
       return state;
   }
 };
-
-
-

@@ -1,13 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 //import Loader from 'react-loader-spinner';
-import {login} from "../action/action"
+import { login } from "../action/action";
 
 class Login extends React.Component {
   state = {
     credentials: {
-      username: '',
-      password: ''
+      username: "",
+      password: ""
     }
   };
 
@@ -24,7 +24,7 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.login(this.state.credentials).then(res => {
       if (res) {
-        this.props.history.push('/protected');
+        this.props.history.push("/protected");
       }
     });
   };
@@ -45,9 +45,7 @@ class Login extends React.Component {
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          <button>
-            {this.props.loggingIn} Click me to login
-          </button>
+          <button>{this.props.loggingIn} Click me to login</button>
         </form>
       </div>
     );
