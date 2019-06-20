@@ -8,18 +8,15 @@ export class FriendsList extends React.Component {
 
     componentDidMount (){
         this.props.getFriends()
+        console.log(this.props.friends)
     }
 
     render() {
         return (
             <>
 
-        {/* if (this.props.FRIENDS_FETCH      ) {
-      
-      return <h1> Hold your horses, it's loading</h1>
-    } */}
             Hello from FriendsList
-            {this.props.friends}
+            {this.props.friends.map(friend => friend.name)}
             </>
         )
     }
