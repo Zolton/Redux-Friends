@@ -43,7 +43,10 @@ export class FriendsList extends React.Component {
           onChange={this.changeHandler}
         />
         <button
-          onClick={() => {this.props.addFriend(this.state.friend)}}>
+          onClick={() => {
+            this.props.addFriend(this.state.friend);
+          }}
+        >
           Submit
         </button>
       </>

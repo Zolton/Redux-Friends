@@ -50,7 +50,7 @@ export const reducer = (state = initialState, action) => {
     case ADD_NEW_FRIEND:
       const newFriend = {
         name: action.payload,
-        age: (Math.random(2) * 1000),
+        age: Math.random(2) * 100,
         email: "gabbehuio"
       };
       return {
