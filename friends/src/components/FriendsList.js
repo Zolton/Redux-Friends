@@ -14,9 +14,14 @@ export class FriendsList extends React.Component {
     render() {
         return (
             <>
-
             Hello from FriendsList
-            {this.props.friends.map(friend => friend.name)}
+            {this.props.friends.map(friend => 
+            <>
+            <h4>Name: {friend.name}</h4>
+            <h4>Age: {friend.age}</h4>
+            <h4>Email: {friend.email}</h4>
+            </>
+                )}
             </>
         )
     }
