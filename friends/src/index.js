@@ -4,11 +4,11 @@ import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import rootReducer from "./reducers";
 import thunk from "redux-thunk";
-import logger from "redux-logger";
+//import logger from "redux-logger";
+import {reducer} from "./reducer/reducer"
 
-const store = createStore(reducer)
+const store = createStore(reducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider>

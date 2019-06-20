@@ -1,5 +1,12 @@
+
+
 const initialState = {
-    friends: [],
+    friends: [{
+      id: 1,
+      name: 'Joe',
+      age: 24,
+      email: 'joe@lambdaschool.com',
+    }],
     newFriend: {
       name: "",
       age: "",
@@ -8,7 +15,7 @@ const initialState = {
     }
 }
 
-export const reducer = (state = initialState, action) {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state
