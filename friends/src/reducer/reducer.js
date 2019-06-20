@@ -4,6 +4,7 @@ import {
   FRIENDS_SUCCESS,
   LOGIN_START,
   LOGIN_SUCCESS,
+  ADD_NEW_FRIEND
 } from "../action/action";
 
 const initialState = {
@@ -11,12 +12,7 @@ const initialState = {
   loggingIn: false,
   isFetching: false,
   error: "",
-  newFriend: {
-    name: "",
-    age: "",
-    email: "",
-    id: ""
-  }
+  
 };
 
 export const reducer = (state = initialState, action) => {
@@ -52,7 +48,20 @@ export const reducer = (state = initialState, action) => {
         isFetching: false,
         friends: action.payload
       };
+    case ADD_NEW_FRIEND:
+      const newFriend = {
+        name: action.payload,
+        age: (Math.random(2) * 100),
+        email: "gabbehuio"
+      };
+      return {
+        ...state,
+        friends: [...state.friends, newFriend]
+      };
     default:
       return state;
   }
 };
+
+
+

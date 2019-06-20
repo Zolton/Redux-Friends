@@ -5,6 +5,7 @@ import { axiosWithAuth } from '../components/axiosWithAuth';
 export const FRIENDS_FETCH = "FRIENDS_FETCH"
 export const FRIENDS_SUCCESS = "FRIENDS_SUCCESS"
 export const FRIENDS_FAILURE = "FRIENDS_FAILURE"
+export const ADD_NEW_FRIEND = "ADD_NEW_FRIEND"
 
 
 export const getFriends = () => dispatch => {
@@ -15,6 +16,25 @@ export const getFriends = () => dispatch => {
             console.log(res)
             dispatch({
                 type: FRIENDS_SUCCESS,
+                payload: res.data
+            })}
+            )
+        .catch(rej=> {
+            console.log(rej)
+            dispatch({
+                type: FRIENDS_FAILURE,
+                payload: rej.response
+            })}
+            )
+}
+
+  export const addFriend = friend => dispatch => {
+    axiosWithAuth()
+        .post("http://localhost:5000/api/friends", friend)
+        .then(res => {
+            console.log(res)
+            dispatch({
+                type: ADD_NEW_FRIEND,
                 payload: res.data
             })}
             )
