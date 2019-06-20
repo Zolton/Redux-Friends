@@ -7,14 +7,7 @@ import {
 } from "../action/action";
 
 const initialState = {
-  friends: [
-    {
-      id: 1,
-      name: "Joe",
-      age: 24,
-      email: "joe@lambdaschool.com"
-    }
-  ],
+  friends: [],
   loggingIn: false,
   isFetching: false,
   error: "",
@@ -57,7 +50,7 @@ export const reducer = (state = initialState, action) => {
         ...state,
         error: "",
         isFetching: false,
-        friends: [...state.friends, action.payload]
+        friends: action.payload
       };
     default:
       return state;
