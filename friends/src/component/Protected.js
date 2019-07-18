@@ -14,7 +14,10 @@ function Protected() {
 
   return (
     <>
-      <div> Hello from Protected.  You made it past security, killbots have been dispatched</div>
+      <div>
+        Hello from Protected. You made it past security, killbots have been
+        dispatched
+      </div>
       {console.log(friends)}
 
       {friends ? (
