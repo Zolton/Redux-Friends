@@ -14,15 +14,15 @@ function Protected() {
 
   return (
     <>
-      <div> Hello from Protected</div>
+      <div> Hello from Protected.  You made it past security, killbots have been dispatched</div>
       {console.log(friends)}
 
       {friends ? (
         friends.map(friend => (
           <>
-            <div>{friend.name}</div>
-            <div>{friend.email}</div>
-            <div>{friend.age}</div>
+            <h4>{friend.name}</h4>
+            <h4>{friend.email}</h4>
+            <h4>{friend.age}</h4>
           </>
         ))
       ) : (

@@ -5,10 +5,13 @@ import { axiosWithAuth } from "./axiosWithAuth";
 const NewFriend = props => {
   return (
     <Form>
-      Hello from New Friend
-      <Field type="text" name="name" />
-      <Field type="text" name="age" />
-      <Field type="email" name="email" />
+      Add New Friend<div>
+      <div><label>Name</label>
+      <Field type="text" name="name" /></div>
+      <div><label>Age</label>
+      <Field type="text" name="age" /></div>
+      <div></div><label>Email</label>
+      <Field type="email" name="email" /></div>
       <button type="submit">Submit</button>
     </Form>
   );

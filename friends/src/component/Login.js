@@ -6,7 +6,6 @@ import axios from "axios";
 const Login = props => {
   return (
     <Form>
-      Hello from Formik
       <Field type="text" name="username" />
       <Field type="password" name="password" />
       <button type="submit">Submit</button>

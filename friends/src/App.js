@@ -10,14 +10,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <ul>
-          <li>
-            <Link to="/">Login</Link>
-          </li>
-          <li>
-            <Link to="/protected">Protected Page</Link>
-          </li>
-        </ul>
+        <Link to="/"> - Login - </Link>
+        <Link to="/protected"> - Protected Page - </Link>
         <Route exact path="/" component={Login} />
         <PrivateRoute exact path="/protected" component={Protected} />
       </Router>
