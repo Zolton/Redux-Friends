@@ -4,10 +4,9 @@ import { withFormik, Form, Field } from "formik";
 import axios from "axios";
 
 const Login = props => {
-
   return (
     <Form>
-        Hello from Formik
+      Hello from Formik
       <Field type="text" name="username" />
       <Field type="password" name="password" />
       <button type="submit">Submit</button>
@@ -23,19 +22,17 @@ export default withFormik({
     };
   },
 
-  handleSubmit(values, { resetForm, setErrors, setSubmitting, ...props }) {
+  handleSubmit(values, { resetForm, setErrors, setSubmitting, props }) {
     if (values.email === "greg@zolton.dev") {
       setErrors({ email: "That email is taken" });
     } else {
       axiosWithAuth()
         .post("http://localhost:5000/api/login", values)
         .then(res => {
-            console.log(props)
+          console.log(props);
           localStorage.setItem("token", res.data.payload);
-          props.props.history.push("/protected")
+          props.history.push("/protected");
         });
     }
   }
 })(Login);
-
-//export default FormikLoginForm;

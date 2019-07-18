@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "./axiosWithAuth";
+import NewFriend from "./NewFriend";
 
 function Protected() {
   const [friends, setFriends] = useState();
@@ -27,6 +28,7 @@ function Protected() {
       ) : (
         <h1> Loading, please wait</h1>
       )}
+      <NewFriend setFriends={setFriends} />
     </>
   );
 }
