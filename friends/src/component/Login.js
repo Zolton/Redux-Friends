@@ -4,19 +4,10 @@ import { withFormik, Form, Field } from "formik";
 import axios from "axios";
 
 const Login = props => {
-  //const [credentials, setCredentials] = useState({})
-  // login = event => {
-  //     event.preventDefault();
-  //     axiosWithAuth()
-  //         .get("http://localhost:5000/api/login", credentials)
-  //         .then(res=>{
-  //             localStorage.setItem("token", res.data.token);
-  //             this.props.history.push("/")
-  //         })
-  // }
 
   return (
     <Form>
+        Hello from Formik
       <Field type="text" name="username" />
       <Field type="password" name="password" />
       <button type="submit">Submit</button>
@@ -24,7 +15,7 @@ const Login = props => {
   );
 };
 
-const FormikLoginForm = withFormik({
+export default withFormik({
   mapPropsToValues({ username, password }) {
     return {
       username: username || "",
@@ -32,18 +23,19 @@ const FormikLoginForm = withFormik({
     };
   },
 
-  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+  handleSubmit(values, { resetForm, setErrors, setSubmitting, ...props }) {
     if (values.email === "greg@zolton.dev") {
       setErrors({ email: "That email is taken" });
     } else {
       axiosWithAuth()
         .post("http://localhost:5000/api/login", values)
         .then(res => {
-          localStorage.setItem("token", res.data.token);
-          //this.props.history.push("/protected")
+            console.log(props)
+          localStorage.setItem("token", res.data.payload);
+          props.props.history.push("/protected")
         });
     }
   }
 })(Login);
 
-export default FormikLoginForm;
+//export default FormikLoginForm;
