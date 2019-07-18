@@ -20,9 +20,9 @@ function Protected() {
       {friends ? (
         friends.map(friend => (
           <>
-            <h4>{friend.name}</h4>
-            <h4>{friend.email}</h4>
-            <h4>{friend.age}</h4>
+            <h4>Friend Name: {friend.name}</h4>
+            <h4>Friend Email: {friend.email}</h4>
+            <h4>Friend Age: {friend.age}</h4>
           </>
         ))
       ) : (
