@@ -15,7 +15,18 @@ function Protected() {
     <>
       <div> Hello from Protected</div>
       {console.log(friends)}
-      
+
+      {friends ? (
+        friends.map(friend => (
+          <>
+            <div>{friend.name}</div>
+            <div>{friend.email}</div>
+            <div>{friend.age}</div>
+          </>
+        ))
+      ) : (
+        <h1> Loading, please wait</h1>
+      )}
     </>
   );
 }

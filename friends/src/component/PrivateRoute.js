@@ -7,15 +7,6 @@ import {
 } from "react-router-dom";
 import Protected from "./Protected";
 
-// const PrivateRoute = ({ component: Component, ...rest }) => (
-//   <Route
-//     {...rest}
-//     render={props =>
-//       localStorage.getItem("token") ? <Component {...props} /> : <Redirect to="/" />
-//     }
-//   />
-// );
-
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
