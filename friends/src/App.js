@@ -1,20 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
   Route,
   Link,
-  PrivateRoute
 } from "react-router-dom";
+import PrivateRoute from "./component/PrivateRoute"
+import Protected from "./component/Protected"
+import Login from "./component/Login"
+import FormikLoginForm from "./component/Login"
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Route exact path="/" component={Login} />
+      <ul>
+        <li>
+          <Link to="/">Login</Link>
+        </li>
+        <li>
+          <Link to="/protected">Protected Page</Link>
+        </li>
+      </ul>
+        <Route exact path="/" component={FormikLoginForm} />
         <PrivateRoute exact path="/protected" component={Protected} />
-        
       </Router>
     </div>
   );
