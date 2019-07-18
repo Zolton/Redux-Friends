@@ -3,6 +3,9 @@ import { axiosWithAuth } from "./axiosWithAuth";
 import { withFormik, Form, Field } from "formik";
 import axios from "axios";
 
+// Love Formik, it just works
+// Don't export Login - just wrap it at the end
+
 const Login = props => {
   return (
     <Form>
@@ -13,6 +16,8 @@ const Login = props => {
   );
 };
 
+// export default withFormik
+
 export default withFormik({
   mapPropsToValues({ username, password }) {
     return {
@@ -20,6 +25,10 @@ export default withFormik({
       password: password || ""
     };
   },
+
+  // Here is where props get passed in - gotta be at the end.  If/else optional
+  // note res.data.payload - servers store their tokens in weird places sometimes, always conlog
+  // History lives on props, need to pass them down
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting, props }) {
     if (values.email === "greg@zolton.dev") {

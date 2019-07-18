@@ -33,6 +33,10 @@ export default withFormik({
     };
   },
 
+  // POST SENDS BACK THE DATA ARRAY. POST SENDS BACK THE DATA ARRAY. POST SENDS BACK THE DATA ARRAY. 
+  //  Just use setFriends to *force* a re-render of the screen, and it won't break like in build week
+  // Because POST sends back the data array, just pour it into the hook to force a re-render
+
   handleSubmit(values, { resetForm, setErrors, setSubmitting, props }) {
     if (values.email === "greg@zolton.dev") {
       setErrors({ email: "That email is taken" });

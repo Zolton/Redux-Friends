@@ -12,6 +12,12 @@ function Protected() {
       });
   }, []);
 
+// I adore this ternary.  Renders "Loading" or whatever you want to insert, even a loading bar on first pass.  Without
+// this ternary, it'll break after friends is empty the first time around
+//  Ternary buys GET time to fill friends with data
+
+// Note - passing setState down to props for use re-rendering
+
   return (
     <>
       <div>
