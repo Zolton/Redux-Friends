@@ -31,3 +31,27 @@
     transform: rotate(360deg);
   }
 }
+
+button {
+  background: red;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+input {
+  width: 20%;
+  height: 30px;
+}
+
+h4 {
+  border: 1px solid black;
+  width: 20%;
+  margin: 0 auto;
+
+}
+
+div {
+  margin: 20px auto;
+}
